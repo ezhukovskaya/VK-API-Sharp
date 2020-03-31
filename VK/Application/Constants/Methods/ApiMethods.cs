@@ -1,7 +1,8 @@
 ﻿namespace VK.Application.Constants.Methods
 {
-    public class ApiMethods
+    public static class ApiMethods
     {
-        public static readonly string Wall = "wall.";
+        public const string Wall = "wall.";
+        public const string Likes = "likes.";
     }
 }

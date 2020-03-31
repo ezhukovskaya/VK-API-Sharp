@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using VK.Application.Constants;
+using VK.Application.Constants.Paths;
 using VK.Framework.BrowserUtils;
 
 namespace VK.Framework.Base

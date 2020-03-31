@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
 
-namespace VK.Application.Constants
+namespace VK.Application.Constants.Locators
 {
-    public class LoginPageLocatorsConstants
+    public static class LoginPageLocatorsConstants
     {
         public static readonly By LoginFieldLocator = By.Id("index_email");
         public static readonly By PasswordFieldLocator = By.Id("index_pass");

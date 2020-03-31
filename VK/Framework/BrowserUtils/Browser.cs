@@ -1,5 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using VK.Framework.Base;
 
 namespace VK.Framework.BrowserUtils
 {
@@ -21,11 +23,6 @@ namespace VK.Framework.BrowserUtils
         public static void Maximize()
         {
             GetBrowser().Manage().Window.Maximize();
-        }
-
-        public static void Close()
-        {
-            GetBrowser().Close();
         }
 
         public static void Quit()

@@ -2,7 +2,7 @@
 {
     public static class FilePathConstants
     {
-        public static readonly string TestConfigurationPath = @"D:\iTechArt\VK\VK\VK\Application\Configuration\config.xml";
-        public static readonly string AppConfigurationPath = @"D:\iTechArt\VK\VK\VK\Application\Configuration\application.xml";
+        public const string TestConfigurationPath = @"C:\Users\K.Zhukouskaya\RiderProjects\VKonSharp\VK\Application\Configuration\config.xml";
+        public const string AppConfigurationPath = @"C:\Users\K.Zhukouskaya\RiderProjects\VKonSharp\VK\Application\Configuration\application.xml";
     }
 }

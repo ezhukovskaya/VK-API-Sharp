@@ -7,7 +7,7 @@ using VK.Framework.Utils;
 
 namespace VK.Application.Builders
 {
-    public class RequestBuilder
+    public static class RequestBuilder
     {
         private static readonly string ApiVersion =
             XMLUtils.GetNodeValue("apiVersion", FilePathConstants.AppConfigurationPath);
@@ -32,15 +32,16 @@ namespace VK.Application.Builders
             ParamsBuilder paramsBuilder = new ParamsBuilder();
             paramsBuilder.AddParams(Parameters.OwnerId, ownerId);
             paramsBuilder.AddParams(Parameters.Message, message);
-            return CreateRequest(ApiMethods.Wall, Attributtes.Post, paramsBuilder.ToString());
+            return CreateRequest(ApiMethods.Wall, Attributes.Post, paramsBuilder.ToString());
         }
 
-        public static string EditWallPostPostMessage(string ownerId, string newMessage)
+        public static string EditWallPostPostMessage(string ownerId, string newMessage, string postId)
         {
             ParamsBuilder paramsBuilder = new ParamsBuilder();
             paramsBuilder.AddParams(Parameters.OwnerId, ownerId);
+            paramsBuilder.AddParams(Parameters.PostId, postId);
             paramsBuilder.AddParams(Parameters.Message, newMessage);
-            return CreateRequest(ApiMethods.Wall, Attributtes.Edit, paramsBuilder.ToString());
+            return CreateRequest(ApiMethods.Wall, Attributes.Edit, paramsBuilder.ToString());
         }
 
         public static string AddCommentToWallPost(string postId, string message)
@@ -48,7 +49,17 @@ namespace VK.Application.Builders
             ParamsBuilder paramsBuilder = new ParamsBuilder();
             paramsBuilder.AddParams(Parameters.PostId, postId);
             paramsBuilder.AddParams(Parameters.Message, message);
-            return CreateRequest(ApiMethods.Wall, Attributtes.CreateComment, paramsBuilder.ToString());
+            return CreateRequest(ApiMethods.Wall, Attributes.CreateComment, paramsBuilder.ToString());
+        }
+
+        public static string GetLikeStatus(string itemId, string ownerId, string userId, string itemType)
+        {
+            ParamsBuilder paramsBuilder = new ParamsBuilder();
+            paramsBuilder.AddParams(Parameters.ItemId, itemId);
+            paramsBuilder.AddParams(Parameters.OwnerId, ownerId);
+            paramsBuilder.AddParams(Parameters.UserId, userId);
+            paramsBuilder.AddParams(Parameters.Type,itemType);
+            return CreateRequest(ApiMethods.Likes, Attributes.IsLiked, paramsBuilder.ToString());
         }
     }
 }

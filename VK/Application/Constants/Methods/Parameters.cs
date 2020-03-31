@@ -1,11 +1,14 @@
 ﻿namespace VK.Application.Constants.Methods
 {
-    public class Parameters
+    public static class Parameters
     {
-        public static readonly string OwnerId = "owner_id=";
-        public static readonly string AccessToken = "access_token=";
-        public static readonly string VersionApi = "v=";
-        public static readonly string Message = "message=";
-        public static readonly string PostId = "post_id=";
+        public const string OwnerId = "owner_id=";
+        public const string AccessToken = "access_token=";
+        public const string VersionApi = "v=";
+        public const string Message = "message=";
+        public const string PostId = "post_id=";
+        public const string UserId = "user_id=";
+        public const string ItemId = "item_id=";
+        public const string Type = "type=";
     }
 }

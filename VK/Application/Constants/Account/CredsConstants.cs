@@ -3,7 +3,7 @@ using VK.Framework.Utils;
 
 namespace VK.Application.Constants.Account
 {
-    public class CredsConstants
+    public static class CredsConstants
     {
         public static readonly string Login = XMLUtils.GetNodeValue("login", FilePathConstants.AppConfigurationPath);
 

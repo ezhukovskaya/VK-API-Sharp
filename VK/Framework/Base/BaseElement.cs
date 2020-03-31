@@ -7,8 +7,11 @@ namespace VK.Framework.Base
 {
     public abstract class BaseElement
     {
-        protected readonly By ButtonLocator;
-        protected string ElementName;
+        private static readonly log4net.ILog Log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        private By ButtonLocator { get; }
+        private string ElementName { get; }
 
         protected BaseElement(By buttonLocator, string elementName)
         {
@@ -33,6 +36,7 @@ namespace VK.Framework.Base
 
         public void Click()
         {
+            Log.Info($"{ElementName} click");
             GetElementByLocator().Click();
         }
 

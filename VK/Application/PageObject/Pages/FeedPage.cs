@@ -7,6 +7,8 @@ namespace VK.Application.PageObject.Pages
 {
     public class FeedPage: BasePage
     {
+        private static readonly log4net.ILog Log =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private static readonly Banner UserIdBanner = new Banner(FeedPageLocatorConstants.UserId, "User Id"); 
         private static readonly Banner FeedPageBanner = new Banner(FeedPageLocatorConstants.FeedPageBannerLocator, "Banner");
         public FeedPage() : base(FeedPageBanner)
@@ -20,6 +22,7 @@ namespace VK.Application.PageObject.Pages
 
         public string GetUserId(string attribute="data-from-oid")
         {
+            Log.Info("Gets User Id");
             return UserIdBanner.GetElementAttributeValue(attribute);
         }
     }
