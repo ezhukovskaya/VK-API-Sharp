@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testConfiguration>
+    <browserName>Chrome</browserName>
+    <language>ru</language>
+    <url>https://vk.com/</url>
+    <apiUrl>https://api.vk.com/method/</apiUrl>
+</testConfiguration>
+
