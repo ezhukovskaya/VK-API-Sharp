@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
       <PackageReference Include="log4net" Version="2.0.8" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

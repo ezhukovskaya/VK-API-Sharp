@@ -1,17 +1,19 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using VK.Application.Constants.Paths;
 using VK.Framework.Base;
+using VK.Framework.Utils;
 
 namespace VK.Framework.BrowserUtils
 {
     public class Browser
     {
         private static IWebDriver driver;
-        private const int Timeout = 10;
-
+        private static readonly string ImplicitTimeout = XMLUtils.GetNodeValue("implicitWait", FilePathConstants.TestConfigurationPath);
+        private static readonly string ExplicitTimeout = XMLUtils.GetNodeValue("explicitWait", FilePathConstants.TestConfigurationPath);
         public static IWebDriver GetBrowser()
-        {
+        { 
             return driver ??= BrowserFactory.GetBrowser();
         }
 
@@ -32,7 +34,14 @@ namespace VK.Framework.BrowserUtils
 
         public static void SetImplicitlyWait()
         {
-            GetBrowser().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Timeout);
+            GetBrowser().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(int.Parse(ImplicitTimeout));
+        }
+
+        public static void SetExplicitWaitUntilContentChanged(BaseElement element, string newText)
+        {
+            var wait = new WebDriverWait(driver, new TimeSpan(int.Parse(ExplicitTimeout)));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElementLocated(
+                element.GetButtonLocator(), newText));
         }
 
         public static string GetCurrentUrl()

@@ -14,6 +14,18 @@
           "lib/netstandard2.0/AngleSharp.dll": {}
         }
       },
+      "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "3.10.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll": {}
+        }
+      },
       "log4net/2.0.8": {
         "type": "package",
         "dependencies": {
@@ -1896,6 +1908,21 @@
         "lib/netstandard1.3/AngleSharp.xml",
         "lib/netstandard2.0/AngleSharp.dll",
         "lib/netstandard2.0/AngleSharp.xml"
+      ]
+    },
+    "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
+      "sha512": "xc6jVVl5ymgk3ZNWnC/KHxkEup1QpnwYbrwF+NQoCOGERsD8YMlLwmsX4lGhLXCLo/YQTRTIwlKCN9E/doGUNg==",
+      "type": "package",
+      "path": "dotnetseleniumextras.waithelpers/3.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
+        "dotnetseleniumextras.waithelpers.nuspec",
+        "lib/net35/SeleniumExtras.WaitHelpers.dll",
+        "lib/net40/SeleniumExtras.WaitHelpers.dll",
+        "lib/net45/SeleniumExtras.WaitHelpers.dll",
+        "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll"
       ]
     },
     "log4net/2.0.8": {
@@ -6305,6 +6332,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "NUnit >= 3.12.0",
       "NUnit3TestAdapter >= 3.16.1",
@@ -6317,26 +6345,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\K.Zhukouskaya\\.nuget\\packages\\": {}
+    "/Users/ekaterinazukovskaa/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\K.Zhukouskaya\\RiderProjects\\VKonSharp\\VK\\VK.csproj",
+      "projectUniqueName": "/Users/ekaterinazukovskaa/RiderProjects/VKonSharp/VK/VK.csproj",
       "projectName": "VK",
-      "projectPath": "C:\\Users\\K.Zhukouskaya\\RiderProjects\\VKonSharp\\VK\\VK.csproj",
-      "packagesPath": "C:\\Users\\K.Zhukouskaya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\K.Zhukouskaya\\RiderProjects\\VKonSharp\\VK\\obj\\",
+      "projectPath": "/Users/ekaterinazukovskaa/RiderProjects/VKonSharp/VK/VK.csproj",
+      "packagesPath": "/Users/ekaterinazukovskaa/.nuget/packages/",
+      "outputPath": "/Users/ekaterinazukovskaa/RiderProjects/VKonSharp/VK/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\K.Zhukouskaya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/ekaterinazukovskaa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6353,6 +6379,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "DotNetSeleniumExtras.WaitHelpers": {
+            "target": "Package",
+            "version": "[3.11.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.5.0, )"
@@ -6405,7 +6435,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/ekaterinazukovskaa/.dotnet/sdk/3.1.300/RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -10,12 +10,17 @@ namespace VK.Framework.Base
         private static readonly log4net.ILog Log =
             log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        private By ButtonLocator { get; }
+        private readonly By _buttonLocator;
         private string ElementName { get; }
+
+        public By GetButtonLocator()
+        {
+            return _buttonLocator;
+        }
 
         protected BaseElement(By buttonLocator, string elementName)
         {
-            this.ButtonLocator = buttonLocator;
+            this._buttonLocator = buttonLocator;
             this.ElementName = elementName;
         }
 
@@ -26,12 +31,12 @@ namespace VK.Framework.Base
 
         protected IWebElement GetElementByLocator()
         {
-            return Browser.GetBrowser().FindElement(this.ButtonLocator);
+            return Browser.GetBrowser().FindElement(this._buttonLocator);
         }
 
         private ReadOnlyCollection<IWebElement> GetElementsByLocator()
         {
-            return Browser.GetBrowser().FindElements(this.ButtonLocator);
+            return Browser.GetBrowser().FindElements(this._buttonLocator);
         }
 
         public void Click()
